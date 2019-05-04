@@ -10,8 +10,8 @@ This is project for unit 6 of Treehouse's PHP TechDegree
     - [x] Ensure that the get method for each property is returning the expected results: id, title, website, email, twitter.
     - [x] Ensure that the toArray method returns an array where each item equals the expected results: id, title, website, email, twitter.
 - [ ] Write tests for the ListingPremium class
-    - [ ] Ensure that getStatus method returns 'premium'.
-    - [ ] Ensure that getDescription method returns the expected results.
+    - [x] Ensure that getStatus method returns 'premium'.
+    - [x] Ensure that getDescription method returns the expected results.
     - [ ] Ensure that getCoc method returns the expected results.
 - [x] Write a test for the ListingFeatured class to ensure that getStatus method returns 'featured'.
 - [x] Add a new image feature using the tests in the ListingImageTest.php file as a guide. When the feature has been added properly, all tests should pass
