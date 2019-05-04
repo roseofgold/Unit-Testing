@@ -54,7 +54,6 @@ class ListingBasicTest extends TestCase
     }
 
     /** @test */
-    //Ensure that getStatus method returns 'basic'.
     public function returnBasicStatus()
     {
         $data = [
@@ -64,4 +63,63 @@ class ListingBasicTest extends TestCase
         $listing = new ListingBasic($data);
         $this->assertEquals('basic', $listing->getStatus());
     }
+
+    /** @test */
+    public function returnId()
+    {
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertEquals($data['id'], $listing->getId());
+    }
+    
+    /** @test */
+    public function returnTitle()
+    {
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertEquals($data['title'], $listing->getTitle());
+    }
+
+    /** @test */
+    public function returnWebsite()
+    {
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+            'website' => 'www.treehouse.com'
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertEquals('http://'.$data['website'], $listing->getWebsite());
+    }
+
+    /** @test */
+    public function returnEmail()
+    {
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+            'email' => 'me@me.com'
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertEquals($data['email'], $listing->getEmail());
+    }
+
+    /** @test */
+    public function returnTwitter()
+    {
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+            'twitter' => 'melindaserven',
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertEquals($data['twitter'], $listing->getTwitter());
+    }
+
 }
