@@ -44,5 +44,5 @@ Thumbs.db
 
 # Test Logs #
 #############
-/tests/log
+/tests/logs
 .phpunit.result.cache
