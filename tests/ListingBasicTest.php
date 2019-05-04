@@ -116,10 +116,28 @@ class ListingBasicTest extends TestCase
         $data = [
             'id' => 1,
             'title' => 'Test Title',
-            'twitter' => 'melindaserven',
+            'twitter' => 'twitterhandle',
         ];
         $listing = new ListingBasic($data);
         $this->assertEquals($data['twitter'], $listing->getTwitter());
     }
 
+    /** @test */
+    public function arrayMethodContainsIdTitleWebsiteEmailAndTwitter()
+    {
+        $data  = [
+            'id' => 1,
+            'title' => 'Test Title',
+            'website' => 'www.treehouse.com',
+            'email' => 'me@me.com',
+            'twitter' => 'twitterhandle'
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertIsArray($listing->toArray());
+        $this->assertArrayHasKey('id', $listing->toArray());
+        $this->assertArrayHasKey('title', $listing->toArray());
+        $this->assertArrayHasKey('website', $listing->toArray());
+        $this->assertArrayHasKey('email', $listing->toArray());
+        $this->assertArrayHasKey('twitter', $listing->toArray());
+    }
 }
