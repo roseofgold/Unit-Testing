@@ -2,10 +2,10 @@
 This is project for unit 6 of Treehouse's PHP TechDegree
 
 ## Features
-- [ ] Use Composer to install PHP Unit ONLY for dev. Put all tests in the "tests" directory.
+- [x] Use Composer to install PHP Unit ONLY for dev. Put all tests in the "tests" directory.
 - [ ] Write tests for the ListingBasic class
-    - [ ] Ensure that all three Exception messages are returned as expected.
-    - [ ] Ensure that an Object is created when passing the minimum, id and title.
+    - [x] Ensure that all three Exception messages are returned as expected.
+    - [x] Ensure that an Object is created when passing the minimum, id and title.
     - [ ] Ensure that getStatus method returns 'basic'.
     - [ ] Ensure that the get method for each property is returning the expected results: id, title, website, email, twitter.
     - [ ] Ensure that the toArray method returns an array where each item equals the expected results: id, title, website, email, twitter.
