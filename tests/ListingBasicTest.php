@@ -52,4 +52,16 @@ class ListingBasicTest extends TestCase
         $listing = new ListingBasic($data);
         $this->assertIsObject($listing);
     }
+
+    /** @test */
+    //Ensure that getStatus method returns 'basic'.
+    public function returnBasicStatus()
+    {
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+        ];
+        $listing = new ListingBasic($data);
+        $this->assertEquals('basic', $listing->getStatus());
+    }
 }
