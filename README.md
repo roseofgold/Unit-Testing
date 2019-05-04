@@ -14,7 +14,7 @@ This is project for unit 6 of Treehouse's PHP TechDegree
     - [ ] Ensure that getDescription method returns the expected results.
     - [ ] Ensure that getCoc method returns the expected results.
 - [ ] Write a test for the ListingFeatured class to ensure that getStatus method returns 'featured'.
-- [ ] Add a new image feature using the tests in the ListingImageTest.php file as a guide. When the feature has been added properly, all tests should pass
+- [x] Add a new image feature using the tests in the ListingImageTest.php file as a guide. When the feature has been added properly, all tests should pass
 - [ ] Create test for the Collection class by mocking a database (BONUS)
 
 ## Technologies Used
