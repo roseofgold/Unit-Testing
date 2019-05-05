@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 class ListingBasicTest extends TestCase
 {
     /** @test */
-    public function listingMustRecieveData()
+    public function listingBasicMustRecieveData()
     {
         $this->expectExceptionMessage('Unable to create a listing, data unavailable');
         $listing = new ListingBasic();
@@ -19,7 +19,7 @@ class ListingBasicTest extends TestCase
     }
     
     /** @test */
-    public function listingMustContainId()
+    public function listingBasicMustContainId()
     {
         $this->expectExceptionMessage('Unable to create a listing, invalid id');
         $data = [
@@ -31,7 +31,7 @@ class ListingBasicTest extends TestCase
     }
 
     /** @test */
-    public function listingMustContainTitle()
+    public function listingBasicMustContainTitle()
     {
         $this->expectExceptionMessage('Unable to create a listing, invalid title');
         $data = [
@@ -43,7 +43,7 @@ class ListingBasicTest extends TestCase
     }
 
     /** @test */
-    public function createObjectWithOnlyIdAndTitle()
+    public function listingBasicCreateWithMinimum()
     {
         $data = [
             'id' => 1,
@@ -54,7 +54,7 @@ class ListingBasicTest extends TestCase
     }
 
     /** @test */
-    public function returnBasicStatus()
+    public function listingBasicCheckStatus()
     {
         $data = [
             'id' => 1,
@@ -65,29 +65,29 @@ class ListingBasicTest extends TestCase
     }
 
     /** @test */
-    public function returnId()
+    public function listingBasicCheckId()
     {
         $data = [
             'id' => 1,
             'title' => 'Test Title',
         ];
         $listing = new ListingBasic($data);
-        $this->assertEquals($data['id'], $listing->getId());
+        $this->assertEquals(1, $listing->getId());
     }
     
     /** @test */
-    public function returnTitle()
+    public function listingBasicCheckTitle()
     {
         $data = [
             'id' => 1,
             'title' => 'Test Title',
         ];
         $listing = new ListingBasic($data);
-        $this->assertEquals($data['title'], $listing->getTitle());
+        $this->assertEquals('Test Title', $listing->getTitle());
     }
 
     /** @test */
-    public function returnWebsite()
+    public function listingBasicCheckWebsite()
     {
         $data = [
             'id' => 1,
@@ -95,11 +95,11 @@ class ListingBasicTest extends TestCase
             'website' => 'www.treehouse.com'
         ];
         $listing = new ListingBasic($data);
-        $this->assertEquals('http://'.$data['website'], $listing->getWebsite());
+        $this->assertEquals('http://www.treehouse.com', $listing->getWebsite());
     }
 
     /** @test */
-    public function returnEmail()
+    public function listingBasicCheckEmail()
     {
         $data = [
             'id' => 1,
@@ -107,11 +107,11 @@ class ListingBasicTest extends TestCase
             'email' => 'me@me.com'
         ];
         $listing = new ListingBasic($data);
-        $this->assertEquals($data['email'], $listing->getEmail());
+        $this->assertEquals('me@me.com', $listing->getEmail());
     }
 
     /** @test */
-    public function returnTwitter()
+    public function listingBasicCheckTwitter()
     {
         $data = [
             'id' => 1,
@@ -119,18 +119,18 @@ class ListingBasicTest extends TestCase
             'twitter' => 'twitterhandle',
         ];
         $listing = new ListingBasic($data);
-        $this->assertEquals($data['twitter'], $listing->getTwitter());
+        $this->assertEquals('twitterhandle', $listing->getTwitter());
     }
 
     /** @test */
-    public function arrayMethodContainsIdTitleWebsiteEmailAndTwitter()
+    public function listingBasicToArrayContainsIdTitleWebsiteEmailAndTwitter()
     {
         $data  = [
             'id' => 1,
             'title' => 'Test Title',
             'website' => 'www.treehouse.com',
             'email' => 'me@me.com',
-            'twitter' => 'twitterhandle'
+            'twitter' => 'twitterhandle',
         ];
         $listing = new ListingBasic($data);
         $this->assertIsArray($listing->toArray());
