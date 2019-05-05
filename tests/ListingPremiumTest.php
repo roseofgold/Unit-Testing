@@ -33,4 +33,16 @@ class ListingPremiumTest extends TestCase
         $listing = new ListingPremium($data);
         $this->assertEquals($data['description'],$listing->getDescription());
     }
+
+    /** @test */
+    public function displayTagsAllowed()
+    {
+        $tags = '&lt;p&gt;&lt;br&gt;&lt;b&gt;&lt;strong&gt;&lt;em&gt;&lt;u&gt;&lt;ol&gt;&lt;ul&gt;&lt;li&gt;';
+        $data = [
+            'id' => 1,
+            'title' => 'Test Title',
+        ];
+        $listing = new ListingPremium($data);
+        $this->assertEquals($tags,$listing->displayAllowedTags());
+    }
 }
