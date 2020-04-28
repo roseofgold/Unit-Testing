@@ -1,5 +1,4 @@
 # Unit Testing
-This is project for unit 6 of Treehouse's PHP TechDegree. It is to show the skills of unit testing.
 
 ## Features
 - [x] Use Composer to install PHP Unit ONLY for dev. Put all tests in the "tests" directory.
